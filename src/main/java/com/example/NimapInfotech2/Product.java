@@ -1,5 +1,6 @@
 package com.example.NimapInfotech2;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,8 +14,11 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	@Column(name = "name")
 	private String name;
-	private String desciption;
+	@Column(name = "description")
+	private String description;
+	@Column(name = "price")
 	private long price;
 	
 	public Product() {
@@ -23,7 +27,7 @@ public class Product {
 	
 	public Product(String name,String description,long price) {
 		this.name = name;
-		this.desciption = description;
+		this.description = description;
 		this.price = price;
 	}
 
@@ -43,12 +47,12 @@ public class Product {
 		this.name = name;
 	}
 
-	public String getDesciption() {
-		return desciption;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDesciption(String desciption) {
-		this.desciption = desciption;
+	public void setDesciption(String description) {
+		this.description = description;
 	}
 
 	public long getPrice() {
@@ -61,7 +65,7 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", desciption=" + desciption + ", price=" + price + "]";
+		return "Product [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + "]";
 	}
 	
 	
